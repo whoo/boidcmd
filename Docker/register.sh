@@ -14,7 +14,7 @@ curl -qs -X POST https://api.boid.com/authenticateUser --data-binary '{"email": 
 TOKEN=$(cat ${name} | jq -r .token)
 ID=$(cat ${name} |jq -r .id)
 
-curl -qs -X POST -H "Content-type: application/json" -H "Authorization: Bearer $TOKEN"   https://api.boid.com/getUser --data-binary '{"id": "cjzpl9rzl6ut80760mu12xrap"}' > ${name}
+curl -qs -X POST -H "Content-type: application/json" -H "Authorization: Bearer $TOKEN"   https://api.boid.com/getUser --data-binary '{"id": "'$ID'"}' > ${name}
 
 
 eecho "Devices lists"
