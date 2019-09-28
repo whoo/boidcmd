@@ -37,16 +37,15 @@ succ=$(boinccmd --get_state |grep  succe | cut -d":" -f 2)
 fail=$(boinccmd --get_state |grep failed | cut -d":" -f 2)
 frac=$(boinccmd --get_state |grep fraction |cut -d':' -f 2)
 
-#printMetric "random" "Cool desc" "gauge" $RANDOM '{name="'$HOSTNAME'"}'; 
-printMetric "jobs" "Jobs done" "gauge" $succ '{name="'$HOSTNAME'",type="succ"}'
+printMetric "jobs" "Jobs Done on this Node" "gauge" $succ '{name="'$HOSTNAME'",type="succ"}'
 printMetricA "jobs" "Jobs done" "gauge" $fail '{name="'$HOSTNAME'",type="fail"}'
 
-title "fraction" "fraction done" "gauge" 
+title "fraction" "Actual jobs status" "gauge" 
 t=0
 for a in $frac
 do
 t=$(($t+1))
-printMetricA "fraction" "fraction done" "gauge" $a '{name="'$HOSTNAME'",task="'$t'"}'
+printMetricA "fraction" "Actual jobs status" "gauge" $a '{name="'$HOSTNAME'",task="'$t'"}'
 done
 
 }
