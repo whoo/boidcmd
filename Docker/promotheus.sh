@@ -54,7 +54,7 @@ done
 if [ ! "z$1" == "zdata" ]
 then
 	while :; do
-		nc -l -p 1234 -c './test.sh data'
+		nc -l -p 1234 -c "$0 data"
 	done
 else
 run

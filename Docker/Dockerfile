@@ -4,12 +4,14 @@
 
 FROM debian:latest
 MAINTAINER Dominique 
-RUN apt update -y && apt install -y boinc-client jq curl
+RUN apt update -y && apt install -y boinc-client jq curl netcat
 USER boinc
+EXPOSE 1234/tcp
 RUN touch ~boinc/.bashrc
 COPY	register.* /tmp/
 CMD 	(sleep 10; boinccmd --project_attach http://www.worldcommunitygrid.org/ 1061556_a0c611b081f8692b7ef0c11d39e6105c )& \
 	/usr/bin/boinc --dir /var/lib/boinc-client --allow_remote_gui_rpc --suppress_net_info ; \
+	/tmp/promotheus.sh & \
 	boinccmd --project http://www.worldcommunitygrid.org/ detach
 
 #RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
