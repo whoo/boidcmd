@@ -22,7 +22,7 @@
     "boidcmd": "bin/boidcmd"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "data-store": "^3.1.0",
     "graphql-request": "^1.8.2",
     "jetty": "^0.2.1",
