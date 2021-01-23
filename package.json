@@ -27,7 +27,7 @@
     "graphql-request": "^1.8.2",
     "jetty": "^0.2.1",
     "linebyline": "^1.3.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.5",
     "multi-progress": "^2.0.0",
     "node-cmd": "^3.0.0",
     "ora": "^3.0.0",
