@@ -30,7 +30,7 @@
     "minimist": "^1.2.0",
     "multi-progress": "^2.0.0",
     "node-cmd": "^3.0.0",
-    "ora": "^3.0.0",
+    "ora": "^3.4.0",
     "os-utils": "0.0.14",
     "progress": "^2.0.3",
     "xml-js": "^1.6.8"
