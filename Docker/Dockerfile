@@ -2,7 +2,7 @@
 ## docker run -d -e EMAIL=yourboidemail.com -e EMAIL_PASS=PASS -h hostname --name hostname boidc
 ## if you want to check docker exec -it hostname bash 
 
-FROM debian:latest
+FROM debian:11.2
 LABEL maintainer="whoo" \
       description="Intel BOINC client for BOID."
 
